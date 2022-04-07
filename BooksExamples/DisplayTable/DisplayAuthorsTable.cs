@@ -13,7 +13,10 @@ namespace DisplayTable
 {
     public partial class DisplayAuthorsTable : Form
     {
-        public DisplayAuthorsTable()
+
+    private bool searchCheck = false;
+
+    public DisplayAuthorsTable()
         {
             InitializeComponent();
         }
@@ -21,26 +24,39 @@ namespace DisplayTable
         //Entity Framework DbContext
         private BooksExamples.BooksEntities dbcontext = new BooksExamples.BooksEntities();
         //load data from database into DataGridView
+
         private void DisplayAuthorsTable_Load(object sender, EventArgs e)
         {
-            //load Authors table ordered by LastName then FirstName
-            dbcontext.Authors
-                .OrderBy(author => author.LastName)
-                .ThenBy(author => author.FirstName)
-                .Load();
-            //specify datasource for authorBindingSource
-            authorBindingSource.DataSource = dbcontext.Authors.Local;
+            if (!searchCheck)
+            {
+                //load Authors table ordered by LastName then FirstName
+                dbcontext.Authors
+                    .OrderBy(author => author.LastName)
+                    .ThenBy(author => author.FirstName)
+                    .Load();
+                //specify datasource for authorBindingSource
+                authorBindingSource.DataSource = dbcontext.Authors.Local;
+            }
 
         }
+
+        private void authorDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void authorBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
-            //load Authors table ordered by LastName then FirstName
-            dbcontext.Authors
+            if (!searchCheck)
+            {
+                //load Authors table ordered by LastName then FirstName
+                dbcontext.Authors
                 .OrderBy(author => author.LastName)
                 .ThenBy(author => author.FirstName)
                 .Load();
-            //specify datasource for authorBindingSource
-            authorBindingSource.DataSource = dbcontext.Authors.Local;
+                //specify datasource for authorBindingSource
+                authorBindingSource.DataSource = dbcontext.Authors.Local;
+            }
         }
 
         
