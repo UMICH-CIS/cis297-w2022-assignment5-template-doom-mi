@@ -59,7 +59,6 @@ namespace DisplayTable
             }
         }
 
-        
         private void authorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             Validate();
@@ -72,6 +71,28 @@ namespace DisplayTable
             {
                 MessageBox.Show("FirstName and LastName must contain values", "Entity Validation Exception");
             }
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            searchCheck = true;
+            authorBindingNavigator_RefreshItems(sender, e);
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            searchCheck = true;
+            authorBindingSource.DataSource = dbcontext.Authors.Local
+                .Where(author => author.LastName.StartsWith(textBox1.Text))
+                .OrderBy(author => author.LastName)
+                .ThenBy(author => author.FirstName);
+            authorBindingSource.MoveFirst();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayTable", "DisplayTabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayResult", "DisplayResult\DisplayResult.csproj", "{8BAAC510-D02A-46C9-A149-89D70C8C9D4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoinQueries", "JoinQueries\JoinQueries.csproj", "{C1286904-BEF2-40DA-B5A8-A4A9A8EBB8D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8BAAC510-D02A-46C9-A149-89D70C8C9D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BAAC510-D02A-46C9-A149-89D70C8C9D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BAAC510-D02A-46C9-A149-89D70C8C9D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1286904-BEF2-40DA-B5A8-A4A9A8EBB8D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1286904-BEF2-40DA-B5A8-A4A9A8EBB8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1286904-BEF2-40DA-B5A8-A4A9A8EBB8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1286904-BEF2-40DA-B5A8-A4A9A8EBB8D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
